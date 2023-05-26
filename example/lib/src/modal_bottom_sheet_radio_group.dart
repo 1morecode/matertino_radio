@@ -30,6 +30,7 @@ class _ModalBottomSheetRadioGroupState
           controller: TextEditingController(text: selectedItem),
           placeholder: "Select Item",
           enabled: false,
+          suffix: const Icon(Icons.arrow_drop_down),
         ));
   }
 }
