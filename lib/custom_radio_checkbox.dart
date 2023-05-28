@@ -1,7 +1,6 @@
 /// Support for doing something awesome.
 ///
 /// More dartdocs go here.
-/// Created By 1morecode
 library custom_radio_checkbox;
 
 export 'src/custom_radio_checkbox_base.dart';
