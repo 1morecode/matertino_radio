@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Radio Checkbox',
+      title: 'Custom Radio Checkbox',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
