@@ -1,10 +1,8 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'matertino_radio_list_tile.dart';
 
-import 'custom_radio_list_tile.dart';
-
-class BottomSheetRadio extends StatefulWidget {
+class MatertinoBottomSheetRadio extends StatefulWidget {
   final List<dynamic> list;
   final String heading;
   final String? selected;
@@ -26,8 +24,14 @@ class BottomSheetRadio extends StatefulWidget {
   final TextStyle? searchTextStyle;
   final Color? borderColor;
   final double? borderWidth;
+  final bool isSearchEnable;
+  final bool selectOnRadioTap;
+  final IconData? selectedRadioIconData;
+  final IconData? unselectedRadioIconData;
+  final Widget? trailingWidget;
+  final Color? tileColor;
 
-  const BottomSheetRadio(
+  const MatertinoBottomSheetRadio(
       {Key? key,
       required this.child,
       required this.list,
@@ -37,6 +41,7 @@ class BottomSheetRadio extends StatefulWidget {
       this.height = 0.8,
       this.radioColor,
       this.headingStyle,
+      this.isSearchEnable = true,
       this.selectedRadioColor,
       this.radioTextStyle,
       this.radioTextSpacing,
@@ -48,15 +53,18 @@ class BottomSheetRadio extends StatefulWidget {
       this.searchPlaceholderStyle,
       this.searchTextStyle,
       this.borderColor,
+      this.selectOnRadioTap = false,
       this.borderWidth,
-      this.radioTextMaximumLine = 2})
+      this.radioTextMaximumLine = 2,
+      this.selectedRadioIconData,
+      this.unselectedRadioIconData, this.trailingWidget, this.tileColor})
       : super(key: key);
 
   @override
-  State<BottomSheetRadio> createState() => _BottomSheetRadioState();
+  State<MatertinoBottomSheetRadio> createState() => _MatertinoBottomSheetRadioState();
 }
 
-class _BottomSheetRadioState extends State<BottomSheetRadio> {
+class _MatertinoBottomSheetRadioState extends State<MatertinoBottomSheetRadio> {
   final TextEditingController searchEditingController = TextEditingController();
   String? selected;
 
@@ -105,7 +113,7 @@ class _BottomSheetRadioState extends State<BottomSheetRadio> {
                         widget.heading,
                         style: widget.headingStyle ??
                             TextStyle(
-                                color: Theme.of(context).colorScheme.primary,
+                                color: Colors.grey,
                                 fontSize: 14,
                                 fontWeight: FontWeight.w600),
                       ),
@@ -130,23 +138,23 @@ class _BottomSheetRadioState extends State<BottomSheetRadio> {
                     ],
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: CupertinoSearchTextField(
-                    controller: searchEditingController,
-                    decoration: widget.searchFieldDecoration,
-                    placeholderStyle: widget.searchPlaceholderStyle,
-                    style: widget.searchTextStyle,
-                    onChanged: (val) {
-                      setState(() {});
-                    },
+                if (widget.isSearchEnable)
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: CupertinoSearchTextField(
+                      controller: searchEditingController,
+                      decoration: widget.searchFieldDecoration,
+                      placeholderStyle: widget.searchPlaceholderStyle,
+                      style: widget.searchTextStyle,
+                      onChanged: (val) {
+                        setState(() {});
+                      },
+                    ),
                   ),
-                ),
                 Divider(
                   height: widget.borderWidth ?? 1,
                   thickness: widget.borderWidth ?? 1,
-                  color: widget.borderColor ??
-                      Theme.of(context).colorScheme.onSurface,
+                  color: widget.borderColor ?? Colors.grey.withOpacity(0.3),
                 ),
                 Expanded(child: Builder(
                   builder: (context) {
@@ -162,13 +170,17 @@ class _BottomSheetRadioState extends State<BottomSheetRadio> {
                       itemList = widget.list;
                     }
                     return ListView.builder(
-                      itemBuilder: (context, index) => CustomRadioListTile(
+                      itemBuilder: (context, index) => MatertinoRadioListTile(
                         value: itemList[index],
                         groupValue: selected ?? "",
                         onChanged: (val) {
                           setState(() {
                             selected = val;
                           });
+                          if (widget.selectOnRadioTap) {
+                            widget.onSelect(selected);
+                            Navigator.of(context).pop();
+                          }
                         },
                         radioSize: widget.radioSize,
                         radioTextSpacing: widget.radioTextSpacing,
@@ -176,10 +188,14 @@ class _BottomSheetRadioState extends State<BottomSheetRadio> {
                         radioColor: widget.radioColor,
                         contentPadding: widget.contentPadding,
                         borderWidth: widget.borderWidth ?? 1,
-                        borderColor: widget.borderColor ??
-                            Theme.of(context).colorScheme.onSurface,
+                        tileColor: widget.tileColor,
+                        borderColor:
+                            widget.borderColor ?? Colors.grey.withOpacity(0.3),
                         titleStyle: widget.radioTextStyle,
                         title: itemList[index],
+                        selectedRadioIconData: widget.selectedRadioIconData,
+                        unselectedRadioIconData: widget.unselectedRadioIconData,
+                        trailingWidget: widget.trailingWidget,
                       ),
                       itemCount: itemList.length,
                     );

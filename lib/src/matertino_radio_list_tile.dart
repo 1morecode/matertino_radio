@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class CustomRadioListTile<T> extends StatelessWidget {
+class MatertinoRadioListTile<T> extends StatelessWidget {
   final T value;
   final T groupValue;
   final Color? radioColor;
@@ -14,8 +14,12 @@ class CustomRadioListTile<T> extends StatelessWidget {
   final double? radioSize;
   final Color? borderColor;
   final double? borderWidth;
+  final IconData? selectedRadioIconData;
+  final IconData? unselectedRadioIconData;
+  final Widget? trailingWidget;
+  final Color? tileColor;
 
-  const CustomRadioListTile({
+  const MatertinoRadioListTile({
     Key? key,
     required this.value,
     this.radioColor,
@@ -28,7 +32,8 @@ class CustomRadioListTile<T> extends StatelessWidget {
     this.contentPadding,
     this.radioSize,
     this.borderColor,
-    this.borderWidth,
+    this.borderWidth, this.selectedRadioIconData,
+    this.unselectedRadioIconData, this.trailingWidget, this.tileColor,
   }) : super(key: key);
 
   @override
@@ -39,6 +44,7 @@ class CustomRadioListTile<T> extends StatelessWidget {
         padding: contentPadding ??
             const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
         decoration: BoxDecoration(
+          color: tileColor ?? Colors.white,
             border: Border(
                 bottom: BorderSide(
                     color: borderColor ?? Colors.transparent,
@@ -56,6 +62,10 @@ class CustomRadioListTile<T> extends StatelessWidget {
                       fontWeight: FontWeight.w400,
                       fontSize: 16),
             )),
+            if(trailingWidget != null)
+            SizedBox(width: radioTextSpacing ?? 12),
+            if(trailingWidget != null)
+              trailingWidget!
           ],
         ),
       ),
@@ -65,11 +75,11 @@ class CustomRadioListTile<T> extends StatelessWidget {
   Widget customRadioIcon(BuildContext context) {
     final isSelected = value == groupValue;
     return Icon(
-      CupertinoIcons.check_mark_circled_solid,
+      isSelected ? selectedRadioIconData ?? CupertinoIcons.checkmark_circle_fill : unselectedRadioIconData ?? CupertinoIcons.checkmark_circle,
       color: isSelected
           ? selectedRadioColor ?? Theme.of(context).colorScheme.primary
-          : radioColor ?? Theme.of(context).colorScheme.background,
-      size: radioSize ?? 20,
+          : radioColor ?? Colors.grey.withOpacity(0.5),
+      size: radioSize ?? 24,
     );
   }
 }

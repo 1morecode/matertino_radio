@@ -1,5 +1,9 @@
-import 'package:example/src/modal_bottom_sheet_radio_group.dart';
 import 'package:flutter/material.dart';
+import 'package:example/src/custom_radio_list_group.dart';
+import 'package:example/src/gender_radio_group.dart';
+import 'package:example/src/modal_bottom_sheet_radio_group.dart';
+import 'package:example/src/radio_list_group.dart';
+import 'package:flutter/cupertino.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,7 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Custom Radio Checkbox',
+      title: 'Custom Radio Group',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -21,22 +25,25 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key});
+  const MyHomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Custom Radio Checkbox"),
+      appBar: const CupertinoNavigationBar(
+        middle: Text("Custom Radio Group"),
       ),
-      body: SafeArea(
-        child: ListView(
-          padding: const EdgeInsets.all(16),
-          children: const [
-            Text("Modal Bottom Sheet Radio Group:"),
-            ModalBottomSheetRadioGroup()
-          ],
-        ),
+      body: ListView(
+        padding: const EdgeInsets.all(16),
+        children: const [
+          ModalBottomSheetRadioGroup(),
+          SizedBox(height: 24,),
+          GenderRadioGroup(),
+          SizedBox(height: 24,),
+          RadioListGroup(),
+          SizedBox(height: 24,),
+          CustomRadioListGroup()
+        ],
       ),
     );
   }
