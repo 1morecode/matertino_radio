@@ -4,7 +4,7 @@
 Fully Customizable Radio Group Package Developed By <a href="https://1morecode.com">1 More Code</a>.
 </p>
 
-[![pub package](https://img.shields.io/badge/pub-v1.0.0-blue)](https://pub.dev/packages/matertino_radio) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  [![Build Status](https://img.shields.io/badge/developer-1morecode-lightgrey)](https://1morecode.com)
+[![pub package](https://img.shields.io/badge/pub-v1.0.1-blue)](https://pub.dev/packages/matertino_radio) [![Build Status](https://img.shields.io/badge/publisher-1morecode.com-lightgrey)](https://1morecode.com)
 
 ## Development
 
@@ -22,7 +22,7 @@ A Beautiful and Simple Custom Radio Group widget for Flutter. It can be fully cu
 1. Add `matertino_radio` to your package's pubspec.yaml file:
 ```dart
 dependencies:
-  matertino_radio: ^latest_version
+  matertino_radio: ^1.0.1
 ```
 
 1. To use import the `matertino_radio` package:
@@ -54,8 +54,7 @@ MatertinoBottomSheetRadio(
     placeholder: "Select Item",
     enabled: false,
     suffix: const Icon(Icons.arrow_drop_down),
-  ) // You can pass any widget in child
-  ...
+  )
 )
 ```
 3. Here is the output:
@@ -67,8 +66,7 @@ MatertinoBottomSheetRadio(
 
 1. Create variables of lists and selectedItem:
 ```dart
-static List<Map<String, dynamic>> lists = ["Male", "Female", "Other"]; 
-
+List<Map<String, dynamic>> lists = ["Male", "Female", "Other"];
 String? selectedItem;
 ```
 2. Use of `MatertinoRadioListTile`:
@@ -100,15 +98,14 @@ Row(
 
 1. Create variables of lists and selectedItem:
 ```dart
-static List<Map<String, dynamic>> lists = [
+List<Map<String, dynamic>> lists = [
   {"title": "India", "rank": "#1", "color": Colors.cyan.withOpacity(0.3)},
   {"title": "Germany", "rank": "#2", "color": Colors.green.withOpacity(0.3)},
   {"title": "Canada", "rank": "#3", "color": Colors.blue.withOpacity(0.3)},
   {"title": "United States", "rank": "#4", "color": Colors.redAccent.withOpacity(0.3)},
   {"title": "Switzerland", "rank": "#5", "color": Colors.amber.withOpacity(0.3)},
   {"title": "China", "rank": "#6", "color": Colors.teal.withOpacity(0.3)}
-]; 
-
+];
 String? selectedItem;
 ```
 2. Use of `MatertinoRadioListTile`:
@@ -159,4 +156,4 @@ If this package saves your time. You can now buy me a coffee!
 
 Use below link and don't forget to leave a message there:
 
-<a href="https://bmc.link/1morecode" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important" ></a>
+<a href="https://bmc.link/1morecode" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 50px !important" ></a>

@@ -1,8 +1,7 @@
 name: matertino_radio
-description: A Beautiful and Simple Custom Radio Group widget for Flutter. It can be fully customized with label, titles, labelStyle, titleStyle, radioIcons, etc. It also contains single radio list tile. You can use this library with bottom sheet radio group as modern dropdown with search feature.
-version: 1.0.0
+description: A Simple Custom Radio Group widgets for Flutter with a search option.
+version: 1.0.1
 homepage: https://github.com/ukieTux/flutter_radio_group
-# repository: https://github.com/my_org/my_repo
 
 environment:
   sdk: '>=2.19.2 <3.0.0'
