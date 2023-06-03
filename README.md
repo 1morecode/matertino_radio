@@ -4,7 +4,7 @@
 Fully Customizable Radio Group Package Developed By <a href="https://1morecode.com">1 More Code</a>.
 </p>
 
-[![pub package](https://img.shields.io/badge/pub-v1.0.0-blue)](https://pub.dev/1morecode/metertino_radio) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  [![Build Status](https://img.shields.io/badge/developer-1morecode-lightgrey)](https://1morecode.com)
+[![pub package](https://img.shields.io/badge/pub-v1.0.0-blue)](https://pub.dev/packages/matertino_radio) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  [![Build Status](https://img.shields.io/badge/developer-1morecode-lightgrey)](https://1morecode.com)
 
 ## Development
 
@@ -22,7 +22,7 @@ A Beautiful and Simple Custom Radio Group widget for Flutter. It can be fully cu
 1. Add `matertino_radio` to your package's pubspec.yaml file:
 ```dart
 dependencies:
-  matertino_radio: ^x.x.x
+  matertino_radio: ^latest_version
 ```
 
 1. To use import the `matertino_radio` package:
@@ -153,8 +153,10 @@ Thank you!
 
 Every pull request is most welcome 🤝.
 
-### Support 🙏
+### Support
 
-To donate directly you can use below link, don't forget to leave a message there:
+If this package saves your time. You can now buy me a coffee! 
 
-<a href="https://bmc.link/1morecode" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+Use below link and don't forget to leave a message there:
+
+<a href="https://bmc.link/1morecode" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important" ></a>
