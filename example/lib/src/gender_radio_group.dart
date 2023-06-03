@@ -32,24 +32,26 @@ class _GenderRadioGroupState extends State<GenderRadioGroup> {
             elevation: 0,
             shape: RoundedRectangleBorder(
                 side: BorderSide(color: Colors.grey.withOpacity(0.3), width: 1),
-                borderRadius: BorderRadius.circular(8)
-            ),
+                borderRadius: BorderRadius.circular(8)),
             margin: const EdgeInsets.all(0),
             child: Row(
               children: List.generate(
-                  genderList.length,
-                  (index) => Expanded(
-                      child: MatertinoRadioListTile(
-                          value: genderList[index]['gender'],
-                          groupValue: selectedGender,
-                          selectedRadioIconData: genderList[index]['iconData'],
-                          unselectedRadioIconData: genderList[index]['iconData'],
-                          onChanged: (val) {
-                            setState(() {
-                              selectedGender = val!;
-                            });
-                          },
-                          title: genderList[index]['gender']))),
+                genderList.length,
+                (index) => Expanded(
+                  child: MatertinoRadioListTile(
+                    value: genderList[index]['gender'],
+                    groupValue: selectedGender,
+                    title: genderList[index]['gender'],
+                    selectedRadioIconData: genderList[index]['iconData'],
+                    unselectedRadioIconData: genderList[index]['iconData'],
+                    onChanged: (val) {
+                      setState(() {
+                        selectedGender = val!;
+                      });
+                    },
+                  ),
+                ),
+              ),
             ),
           ),
         )

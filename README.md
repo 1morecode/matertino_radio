@@ -1,108 +1,143 @@
 <h2 align="center">Matertino Radio</h1>
 
 <p align="center">
-Flutter package to render a <a href="https://material.io/design/components/buttons-floating-action-button.html#types-of-transitions">Material Design Speed Dial</a>.
+Fully Customizable Radio Group Package Developed By <a href="https://1morecode.com">1 More Code</a>.
 </p>
 
+[![pub package](https://img.shields.io/badge/pub-v1.0.0-blue)](https://pub.dev/1morecode/metertino_radio) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  [![Build Status](https://img.shields.io/badge/developer-1morecode-lightgrey)](https://1morecode.com)
 
-## Support the development
+## Development
 
-To sustain the development of this library we need someone who can help this library either through code or by donating it. Donation will help us to live up in the world of unmaintained open source packages and to dedicate more time in improving this to live up to the mark. We will also add the name of the contributors or the donaters in the README section.
+A Beautiful and Simple Custom Radio Group widget for Flutter. It can be fully customized with label, titles, labelStyle, titleStyle, radioIcons, etc. It also contains single radio list tile. You can use this library with bottom sheet radio group as modern dropdown with search feature.
 
-To donate directly you can use below link, don't forget to leave a message there:
+### Demo Screenshot of `MatertinoRadio`:
 
-<a href="https://www.buymeacoffee.com/prateeksunal" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+| ![](https://github.com/1morecode/matertino_radio/assets/57178146/b7eaff6e-a665-4735-82dd-972a248ec0ce)  | ![](https://github.com/1morecode/matertino_radio/assets/57178146/173db5e4-9fc4-4103-a196-f7106e2d1a10) | ![](https://github.com/1morecode/matertino_radio/assets/57178146/3ae71a90-4862-4dbf-8506-ea9fd986ea97) |
+|:---:|:---:|:---:|
 
-Or become a Github [sponser](https://github.com/sponsors/prateekmedia) by clicking on the Sponser button in this repository.
+## How to use:
 
-<p align="center"><a href="https://github.com/darioielardi/flutter_speed_dial/releases"><img alt="GitHub release" src="https://img.shields.io/github/v/release/darioielardi/flutter_speed_dial"/></a> <a href="LICENSE"><img alt="License" src="https://img.shields.io/github/license/darioielardi/flutter_speed_dial?color=blue"/></a> <a href="https://pub.dev/documentation/flutter_speed_dial/latest/flutter_speed_dial/flutter_speed_dial-library.html"><img alt="Classic API Docs" src="https://img.shields.io/badge/Classic Docs-informational"/></a> <a href="#usage"><img alt="Usage" src="https://img.shields.io/badge/Usage-blue"/></a></p>
+### How to use `MatertinoRadio`:
 
-<p align="center">
-<img src="https://user-images.githubusercontent.com/41370460/113670683-0de04700-96d3-11eb-8029-aeadf1797b60.gif" height="460">
-</p>
-
-### Usage
-
-The SpeedDial widget is built to be placed in the `Scaffold.floatingActionButton` argument, replacing the `FloatingActionButton` widget.
-You can set its position using `Scaffold.floatingActionButtonLocation` argument.
-It can also be used with `Scaffold.bottomNavigationBar` and `Snackbar`.
-
-**Null safety** is available from version **3.0.5** *( It is also backward compatible,  meaning you can use it with non null safe code too )*
-
-#### Labels
-
-SpeedDial can take any Widget as `label` *SpeedDial will use Extended FloatingActionButton property if label is specified*. It also have `activeLabel` property by which you can specify the label which is shown when SpeedDial is open. It also comes with its labelTransitionBuilder which defaults to fade transition.
-
-Also Every child's button have `label` property which accepts `String` which can be styled by using `labelStyle`. If you want to specify a widget then you can use labelWidget.  
-If the `label` parameter is not provided, then the label will be not rendered.
-
-#### Types of child for SpeedDial *(Ordered by their priority)*
-<details>
- <summary>
-  <b>Animated Icon</b> using <code>animatedIcon</code> property
- </summary>
-SpeedDial's AnimatedIcon has two specific parameters:
-
-- `animatedIcon` takes an `AnimatedIconData` widget
-- `animatedIconTheme` takes `IconThemeData`
-</details>
-<details>
- <summary>
-  <b>Widget</b> using <code>child</code> & <code>activeChild</code> property
- </summary>
-SpeedDial's Widget has two specific parameters:
-
-- `child` takes a widget and is the default placeholder if dial is not open.
-- `activeChild` takes a widget and is the child's Widget which is used when dial is open, not required.
-</details>
-<details>
- <summary>
-  <b>IconData</b> using <code>icon</code> & <code>activeIcon</code> property
- </summary>
-SpeedDial's IconData has three specific parameters:
-
-- `icon` takes a `IconData` and is the default placeholder if dial is not open.
-- `activeIcon` takes a `IconData` and is the child's IconData which is used when dial is open, not required.
-- `iconTheme` takes its `IconThemeData` which includes color and size.
-</details>
-
-The package will handle the animation by itself.
-
-#### Handle spacing
-
-There are various properties for SpeedDial by which you can adjust the spacing:
-
-1. `spacing` - This parameter handles the space b/w speed dial and its children.
-
-2. `spaceBetweenChildren` - As the name suggests, this is used to adjust the space b/w every child element
-
-3. `childPadding` - This will adjust the padding of children speed dial button, this will help you to control the size of the children button more effectively.
-
-4. `childMargin` - This will help you to adjust the margin b/w children speed dial button and its label.
-
-#### Close on WillPop
-
-Closes automatically on back button press, if dial is open.
-If you don't want this behaviour then simply change the value of `closeDialOnPop` to false.
-
-#### How to use `openCloseDial` property:
-
-1. Create a value notifier named `isDialOpen`:
+1. Add `matertino_radio` to your package's pubspec.yaml file:
 ```dart
-ValueNotifier<bool> isDialOpen = ValueNotifier(false);
+dependencies:
+  matertino_radio: ^x.x.x
 ```
-2. Then set `openCloseDial` to `isDialOpen` in your `SpeedDial`:
+
+1. To use import the `matertino_radio` package:
 ```dart
-SpeedDial(
-  ...
-  openCloseDial: isDialOpen,
+import 'package:matertino_radio/matertino_radio.dart';
+```
+
+#### How to use `MatertinoBottomSheetRadio` property:
+
+1. Create variables of lists and selectedItem:
+```dart
+List<String> items = ["Adventure", "Agility", "Cultural Influence", "Entrepreneurship", "Heritage", "Movers", "Open for Business", "Power", "Quality of Life", "Social Purpose"];
+  
+String? selectedItem;
+```
+2. Create a `MatertinoBottomSheetRadio`:
+```dart
+MatertinoBottomSheetRadio(
+  list: items,
+  selected: selectedItem,
+  onSelect: (val) {
+    setState(() {
+      selectedItem = val;
+    });
+  },
+  child: CupertinoTextField(
+    onTap: null,
+    controller: TextEditingController(text: selectedItem),
+    placeholder: "Select Item",
+    enabled: false,
+    suffix: const Icon(Icons.arrow_drop_down),
+  ) // You can pass any widget in child
   ...
 )
 ```
-3. Now you can change the state of dial open:
+3. Here is the output:
+<p>
+<img src="https://github.com/1morecode/matertino_radio/assets/57178146/b7eaff6e-a665-4735-82dd-972a248ec0ce" height="460">
+</p>
+
+#### How to use `MatertinoRadio` horizontal radio group:
+
+1. Create variables of lists and selectedItem:
 ```dart
-isDialOpen.value = false;
+static List<Map<String, dynamic>> lists = ["Male", "Female", "Other"]; 
+
+String? selectedItem;
 ```
+2. Use of `MatertinoRadioListTile`:
+```dart
+Row(
+  children: List.generate(
+    lists.length, 
+    (index) => Expanded(
+      child: MatertinoRadioListTile(
+        value: lists[index],
+        groupValue: selectedItem,
+        title: lists[index],
+        onChanged: (val) {
+          setState(() {
+            selectedItem = val!;
+          });
+        }
+      )
+    )
+  )
+)
+```
+3. Here is the output:
+<p>
+<img src="https://github.com/1morecode/matertino_radio/assets/57178146/173db5e4-9fc4-4103-a196-f7106e2d1a10">
+</p>
+
+#### How to use `MatertinoRadio` list with custom radio group:
+
+1. Create variables of lists and selectedItem:
+```dart
+static List<Map<String, dynamic>> lists = [
+  {"title": "India", "rank": "#1", "color": Colors.cyan.withOpacity(0.3)},
+  {"title": "Germany", "rank": "#2", "color": Colors.green.withOpacity(0.3)},
+  {"title": "Canada", "rank": "#3", "color": Colors.blue.withOpacity(0.3)},
+  {"title": "United States", "rank": "#4", "color": Colors.redAccent.withOpacity(0.3)},
+  {"title": "Switzerland", "rank": "#5", "color": Colors.amber.withOpacity(0.3)},
+  {"title": "China", "rank": "#6", "color": Colors.teal.withOpacity(0.3)}
+]; 
+
+String? selectedItem;
+```
+2. Use of `MatertinoRadioListTile`:
+```dart
+Column(
+  children: List.generate(
+    lists.length,
+    (index) => MatertinoRadioListTile(
+      value: lists[index]['title'],
+      groupValue: selectedItem,
+      title: lists[index]['title'],
+      tileColor: itemList[index]['color'],
+      trailingWidget: Text(itemList[index]['rank']),
+      selectedRadioIconData: CupertinoIcons.checkmark_seal_fill,
+      unselectedRadioIconData: CupertinoIcons.checkmark_seal,
+      onChanged: (val) {
+        setState(() {
+          selectedItem = val!;
+        });
+      }
+    )
+  )
+)
+```
+
+3. Here is the output:
+<p>
+<img src="https://github.com/1morecode/matertino_radio/assets/57178146/3ae71a90-4862-4dbf-8506-ea9fd986ea97">
+</p>
 
 #### Example Usage
 
@@ -110,10 +145,16 @@ See [Example Code](example/lib/main.dart) for more info.
 
 ### Issues & Feedback
 
-Please file an [issue](https://github.com/darioielardi/flutter_speed_dial/issues) to send feedback or report a bug,  
-If you want to ask a question or suggest an idea then you can [open an discussion](https://github.com/darioielardi/flutter_speed_dial/discussions).  
+Please file an [issue](https://github.com/1morecode/matertino_radio/issues) to send feedback or report a bug,  
+If you want to ask a question or suggest an idea then you can [open an discussion](https://github.com/1morecode/matertino_radio/discussions).  
 Thank you!
 
 ### Contributing
 
-Every pull request is welcome.
+Every pull request is most welcome 🤝.
+
+### Support 🙏
+
+To donate directly you can use below link, don't forget to leave a message there:
+
+<a href="https://bmc.link/1morecode" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
