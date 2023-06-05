@@ -62,11 +62,15 @@ MatertinoBottomSheetRadio(
 <img src="https://github.com/1morecode/matertino_radio/assets/57178146/b7eaff6e-a665-4735-82dd-972a248ec0ce" height="460">
 </p>
 
-#### How to use `MatertinoRadio` horizontal radio group:
+#### How to use `MatertinoRadio` horizontal custom radio group:
 
 1. Create variables of lists and selectedItem:
 ```dart
-List<Map<String, dynamic>> lists = ["Male", "Female", "Other"];
+List<Map<String, dynamic>> lists = [
+  {"title": "Male", "iconData": Icons.male_rounded},
+  {"title": "Female", "iconData": Icons.female_rounded},
+  {"title": "Other", "iconData": Icons.alt_route_rounded}
+];
 String? selectedItem;
 ```
 2. Use of `MatertinoRadioListTile`:
@@ -76,9 +80,9 @@ Row(
     lists.length, 
     (index) => Expanded(
       child: MatertinoRadioListTile(
-        value: lists[index],
+        value: lists[index]['title'],
         groupValue: selectedItem,
-        title: lists[index],
+        title: lists[index]['title'],
         onChanged: (val) {
           setState(() {
             selectedItem = val!;
@@ -154,6 +158,6 @@ Every pull request is most welcome 🤝.
 
 If this package saves your time. You can now buy me a coffee! 
 
-Use below link and don't forget to leave a message there:
+Scan bellow QR code or click and don't forget to leave a message there:
 
-<a href="https://bmc.link/1morecode" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 50px !important" ></a>
+<a href="https://bmc.link/1morecode" target="_blank"><img src="https://github.com/1morecode/matertino_radio/assets/57178146/1995d3e2-b061-4655-81d5-df1d41d9bfb6" alt="Buy Me A Coffee" style="height: 160px !important" ></a>
