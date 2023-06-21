@@ -3,33 +3,86 @@ import 'package:flutter/material.dart';
 import 'matertino_radio_list_tile.dart';
 
 class MatertinoBottomSheetRadio extends StatefulWidget {
-  final List<dynamic> list;
-  final String heading;
-  final String? selected;
-  final Function onSelect;
-  final double height;
-  final Widget child;
+  /// Radio Icon Color
   final Color? radioColor;
+
+  /// Selected Radio Color
   final Color? selectedRadioColor;
-  final TextStyle? radioTextStyle;
-  final int radioTextMaximumLine;
+
+  /// Spacing Between Icon and Title
   final double? radioTextSpacing;
+
+  /// List Title Padding
   final EdgeInsetsGeometry? contentPadding;
+
+  /// Radio Icon Size
   final double? radioSize;
-  final TextStyle? headingStyle;
-  final String? doneButtonText;
-  final TextStyle? doneTextStyle;
-  final BoxDecoration? searchFieldDecoration;
-  final TextStyle? searchPlaceholderStyle;
-  final TextStyle? searchTextStyle;
+
+  /// List Tile Border Color
   final Color? borderColor;
+
+  /// List Tile Border Width
   final double? borderWidth;
-  final bool isSearchEnable;
-  final bool selectOnRadioTap;
+
+  /// Selected Radio Icon
   final IconData? selectedRadioIconData;
+
+  /// Un-Selected Radio Icon
   final IconData? unselectedRadioIconData;
+
+  /// Trailing Widget
   final Widget? trailingWidget;
+
+  /// Tile Background Color
   final Color? tileColor;
+
+  /// Item List
+  final List<dynamic> list;
+
+  /// Bottom Sheet Title
+  final String heading;
+
+  /// Selected Value
+  final String? selected;
+
+  /// On Select Callback Function
+  final Function onSelect;
+
+  /// Bottom Sheet Height
+  final double height;
+
+  /// Any Widget
+  final Widget child;
+
+  /// Radio Text Style
+  final TextStyle? radioTextStyle;
+
+  /// Title Maximum Line
+  final int radioTextMaximumLine;
+
+  /// Bottom Sheet Heading Style
+  final TextStyle? headingStyle;
+
+  /// Finish Button Text
+  final String? doneButtonText;
+
+  /// Finish Button Text Style
+  final TextStyle? doneTextStyle;
+
+  /// Search Field Decoration
+  final BoxDecoration? searchFieldDecoration;
+
+  /// Search Field Placeholder
+  final TextStyle? searchPlaceholderStyle;
+
+  /// Search Input Text Style
+  final TextStyle? searchTextStyle;
+
+  /// Show/Hide Search Feature
+  final bool isSearchEnable;
+
+  /// Enable/Disable On Radio Tap Select
+  final bool selectOnRadioTap;
 
   const MatertinoBottomSheetRadio(
       {Key? key,
@@ -57,11 +110,14 @@ class MatertinoBottomSheetRadio extends StatefulWidget {
       this.borderWidth,
       this.radioTextMaximumLine = 2,
       this.selectedRadioIconData,
-      this.unselectedRadioIconData, this.trailingWidget, this.tileColor})
+      this.unselectedRadioIconData,
+      this.trailingWidget,
+      this.tileColor})
       : super(key: key);
 
   @override
-  State<MatertinoBottomSheetRadio> createState() => _MatertinoBottomSheetRadioState();
+  State<MatertinoBottomSheetRadio> createState() =>
+      _MatertinoBottomSheetRadioState();
 }
 
 class _MatertinoBottomSheetRadioState extends State<MatertinoBottomSheetRadio> {

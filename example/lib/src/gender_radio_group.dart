@@ -9,11 +9,15 @@ class GenderRadioGroup extends StatefulWidget {
 }
 
 class _GenderRadioGroupState extends State<GenderRadioGroup> {
+
+  /// Gender Options
   static List<Map<String, dynamic>> genderList = [
     {"gender": "Male", "iconData": Icons.male_rounded},
     {"gender": "Female", "iconData": Icons.female_rounded},
     {"gender": "Other", "iconData": Icons.alt_route_rounded}
   ];
+
+  /// Selected Item
   static String selectedGender = "Female";
 
   @override

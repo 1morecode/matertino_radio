@@ -12,7 +12,9 @@ class ModalBottomSheetRadioGroup extends StatefulWidget {
 
 class _ModalBottomSheetRadioGroupState
     extends State<ModalBottomSheetRadioGroup> {
-  List<String> items = ["Adventure",
+  /// Item List
+  List<String> items = [
+    "Adventure",
     "Agility",
     "Cultural Influence",
     "Entrepreneurship",
@@ -21,8 +23,10 @@ class _ModalBottomSheetRadioGroupState
     "Open for Business",
     "Power",
     "Quality of Life",
-    "Social Purpose"];
+    "Social Purpose"
+  ];
 
+  /// Selected Item
   String? selectedItem;
 
   @override
@@ -32,7 +36,9 @@ class _ModalBottomSheetRadioGroupState
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const Text("Modal Bottom Sheet Radio Group:"),
-        const SizedBox(height: 5,),
+        const SizedBox(
+          height: 5,
+        ),
         MatertinoBottomSheetRadio(
           list: items,
           onSelect: (val) {
@@ -50,16 +56,15 @@ class _ModalBottomSheetRadioGroupState
             child: Card(
               elevation: 0,
               shape: RoundedRectangleBorder(
-                  side: BorderSide(color: Colors.grey.withOpacity(0.3), width: 1),
-                  borderRadius: BorderRadius.circular(8)
-              ),
+                  side:
+                      BorderSide(color: Colors.grey.withOpacity(0.3), width: 1),
+                  borderRadius: BorderRadius.circular(8)),
               margin: const EdgeInsets.all(0),
               child: CupertinoTextField(
                 onTap: null,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8.0),
-                  color: Colors.white
-                ),
+                    borderRadius: BorderRadius.circular(8.0),
+                    color: Colors.white),
                 controller: TextEditingController(text: selectedItem),
                 placeholder: "Select Item",
                 enabled: false,

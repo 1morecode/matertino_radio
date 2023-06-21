@@ -9,6 +9,8 @@ class RadioListGroup extends StatefulWidget {
 }
 
 class _RadioListGroupState extends State<RadioListGroup> {
+
+  /// Items List
   static List<String> itemList = [
     "India",
     "Germany",
@@ -16,6 +18,7 @@ class _RadioListGroupState extends State<RadioListGroup> {
     "United States",
   ];
 
+  /// Selected Item
   static String selectedItem = "India";
 
   @override

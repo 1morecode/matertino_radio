@@ -10,6 +10,7 @@ class CustomRadioListGroup extends StatefulWidget {
 }
 
 class _CustomRadioListGroupState extends State<CustomRadioListGroup> {
+  /// Items List
   static List<Map<String, dynamic>> itemList = [
     {
       "title": "India",
@@ -43,6 +44,7 @@ class _CustomRadioListGroupState extends State<CustomRadioListGroup> {
     }
   ];
 
+  /// Selected Item
   static String selectedItem = "Canada";
 
   @override

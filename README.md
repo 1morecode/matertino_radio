@@ -4,7 +4,7 @@
 Fully Customizable Radio Group Package Developed By <a href="https://1morecode.com">1 More Code</a>.
 </p>
 
-[![pub package](https://img.shields.io/badge/pub-v1.0.1-blue)](https://pub.dev/packages/matertino_radio) [![Build Status](https://img.shields.io/badge/publisher-1morecode.com-lightgrey)](https://1morecode.com)
+[![pub package](https://img.shields.io/badge/pub-v1.0.3-blue)](https://pub.dev/packages/matertino_radio) [![Build Status](https://img.shields.io/badge/publisher-1morecode.com-lightgrey)](https://1morecode.com)
 
 ## Development
 
