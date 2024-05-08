@@ -1,10 +1,10 @@
 name: matertino_radio
 description: A Simple Custom Radio Group widgets for Flutter with a search option.
-version: 1.0.4
+version: 1.0.5
 homepage: https://github.com/1morecode/matertino_radio
 
 environment:
-  sdk: '>=2.19.2 <3.0.0'
+  sdk: '>=3.3.3 <4.0.0'
 
 dependencies:
   flutter:

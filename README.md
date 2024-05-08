@@ -4,7 +4,7 @@
 Fully Customizable Radio Group Package Developed By <a href="https://1morecode.com">1 More Code</a>.
 </p>
 
-[![pub package](https://img.shields.io/badge/pub-v1.0.4-blue)](https://pub.dev/packages/matertino_radio) [![Build Status](https://img.shields.io/badge/publisher-1morecode.com-lightgrey)](https://1morecode.com)
+[![pub package](https://img.shields.io/badge/pub-v1.0.5-blue)](https://pub.dev/packages/matertino_radio) [![Build Status](https://img.shields.io/badge/publisher-1morecode.com-lightgrey)](https://1morecode.com)
 
 ## Development
 
@@ -22,7 +22,7 @@ A Beautiful and Simple Custom Radio Group widget for Flutter. It can be fully cu
 1. Add `matertino_radio` to your package's pubspec.yaml file:
 ```dart
 dependencies:
-  matertino_radio: ^1.0.1
+  matertino_radio: ^1.0.5
 ```
 
 1. To use import the `matertino_radio` package:
