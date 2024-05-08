@@ -18,3 +18,8 @@
 ## 1.0.4
 
 - Home Page Issue Fixed
+
+## 1.0.5
+
+- Updates minimum supported SDK version to Dart 3.3.3
+- Performance Improved
